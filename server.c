@@ -244,12 +244,12 @@ void send_receive_message(int sock){
     char client_message[2000];
     while( (read_size = recv(sock , client_message , 2000 , 0)) > 0 )
     {
-        //printf("%s",client_message);
-        printf("%d",read_size);
+        printf("%s",client_message);
+        //printf("%d",read_size);
 
         puts("");
         //Send the message back to client
-        //write(sock , client_message , strlen(client_message));
+        write(sock , client_message , strlen(client_message));
         memset(client_message,0,sizeof(client_message));
     }
 
